@@ -1,0 +1,38 @@
+.btn-rounded {
+	border-radius: 100px;
+} 
+.btn-transparent-blue{
+	mix-blend-mode: overlay;
+	background-color: #3f3f3f;
+	color: white;
+	font-size: 20px;
+	border-radius: 20px 0;
+	transition: $tr-03;
+	&:hover{
+		mix-blend-mode: overlay;
+		border-radius: 0 20px;
+		color: $white;
+		background-color: $light__blue;
+
+	}
+}
+
+.btn-outline-blue{
+	border-radius: 100px;
+	color:  $light__blue;
+	transition:$tr-03;
+	--bs-btn-border-color:  #009df5;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg:  #009df5;
+    --bs-btn-hover-border-color:  #009df5;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg:  #009df5;
+    --bs-btn-active-border-color:  #009df5;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color:  #009df5;
+    --bs-btn-disabled-bg: transparent;
+    --bs-gradient: none;
+	&:hover{
+		border-radius: 5px 20px;
+	}
+}

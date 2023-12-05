@@ -1,0 +1,159 @@
+
+.portfolio-card {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	.portfolio-card-img {
+		width: -webkit-fill-available;
+		height: 370px;
+		object-fit: cover;
+		@media (max-width :1300px){
+			height: 200px;
+		}
+		@media (max-width :1200px){
+			height: 160px;
+		}
+		@media (max-width :992px){
+			height: 120px;
+		}
+		@media (max-width :768px){
+			height: 300px;
+		}
+
+	}
+	.portfolio-card-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%) ;
+		-webkit-transform: translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+		text-align: center;
+		visibility: hidden;
+		opacity: 0;
+		background-image: linear-gradient(to top, lighten($blue, 40%) 0%, rgba(lighten($blue, 40%), .7) 99%, rgba(lighten($blue, 40%), .8) 100%);
+		@include transition(all, .3s);
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		overflow: hidden;
+
+		.portfolio-card-caption {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) ;
+			-webkit-transform: translate(-50%,-50%);
+			-ms-transform:translate(-50%,-50%);
+			width: 100%;
+		}
+	}
+
+	&:hover {
+		.portfolio-card-overlay {
+			opacity: 1;
+			visibility: visible;
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
+	}
+}
+@include media-breakpoint-down(sm){
+	.portfolio-card {
+		margin-bottom: 30px;
+	}
+	.portfolio-card .portfolio-card-img {
+		width: -webkit-fill-available;
+		height: 200px;
+		object-fit: cover;
+	}
+}
+
+
+
+
+
+
+/* blog kardlar */
+.blog-card {
+	@include flex;
+	align-items: center;
+	text-align: left;
+	border: 1px solid $border-color;
+	margin-bottom: 30px;
+	border-radius: $card-border-radius;
+	overflow: hidden;
+
+
+	&-header {
+		min-width: 450px;
+		max-width: 450px;
+		@media(max-width:1200px) {
+			min-width: 350px;
+			max-width: 350px;
+		}
+		img{
+			object-fit: cover;
+		}
+	}
+
+	&-img {
+		border-radius: $card-border-radius 0 0 $card-border-radius;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&-body {
+		padding: 20px;
+		text-align: justify;
+	}
+
+	&-title {
+		font-weight: 100;
+	}
+
+	&-caption {
+		margin: 15px 0 15px !important;
+
+		i {
+			display: inline-block;
+			width: 15px;
+		}
+
+		a {
+			margin-right: 10px;;
+			color: #444;
+			text-decoration: none;
+			display: inline-block;
+			font-weight: 600;
+			opacity: .7;
+			font-size: 13px;
+		}
+	}
+
+	&-link {
+		text-decoration: none;
+		margin-top: 20px;
+		display: block;
+		font-size: 13px;
+		i {
+			position: relative;
+			top: 1px;				
+		}
+	}
+}
+@include media-breakpoint-down (md) {
+	.blog-card {
+		flex-direction: column;		
+	
+		.blog-card-header {
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+		}
+	}
+}
+
